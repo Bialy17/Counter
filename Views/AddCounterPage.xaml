@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CounterApp.Views.AddCounterPage"
+             xmlns:models="clr-namespace:CounterApp.Models"
+             x:DataType="models:AddCounter"
+             Title="Dodaj licznik">
+    <ContentPage.BindingContext>
+        <models:AddCounter/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Label Text="{Binding SetCounterName}"/>
+        <Entry Placeholder="Nazwa licznika" Text="{Binding CounterName}"/>
+        <Label Text="{Binding SetCounterDefaultValue}"/>
+        <Entry Placeholder="Wartość początkowa (domyślnie 0)" Text="{Binding CounterDefaultValue}"/>
+        <Button BackgroundColor="Purple" TextColor="White"
+                VerticalOptions="Start" HorizontalOptions="End"
+                Margin="20" Clicked="AddNewCounter" Text="Dodaj nowy licznik"/>
+    </VerticalStackLayout>
+</ContentPage>

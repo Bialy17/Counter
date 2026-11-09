@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CounterApp.Views.CounterPage"
+             Title="Licznik">
+
+    <VerticalStackLayout Padding="25" Spacing="25" VerticalOptions="Center">
+
+        <Label Text="{Binding Name}"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+
+            <Button Text="−"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    CornerRadius="12"
+                    FontSize="28"
+                    BackgroundColor="#DC5555"
+                    TextColor="White"
+                    Clicked="DeincrementCounter"/>
+
+            <Border BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 12"
+                    WidthRequest="200"
+                    HeightRequest="100">
+
+                <Label x:Name="CurrentCount"
+                        FontSize="30"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"/>
+            </Border>
+
+            <Button Text="+"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    CornerRadius="12"
+                    FontSize="28"
+                    BackgroundColor="#48A875"
+                    TextColor="White"
+                    Clicked="IncrementCounter"/>
+
+        </HorizontalStackLayout>
+
+        <Button Text="{Binding ReturnToAllCountersText}"
+            Clicked="ReturnToAllCounters"
+            WidthRequest="430"
+            HorizontalOptions="Center"
+            Margin="20"
+        />
+    </VerticalStackLayout>
+</ContentPage>
